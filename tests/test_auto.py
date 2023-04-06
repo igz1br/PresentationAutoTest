@@ -1,4 +1,4 @@
-from mocks import QuestionModel, Question
+from app.mocks import QuestionModel, Question
 import pytest
 
 test_question_model = QuestionModel()
@@ -61,4 +61,4 @@ size_test_data = [
 def test_size(size, expected):
     test_answers_list = [str(i) for i in range(size)]
     test_question_model.create(id=200+size, text=f"test #{size}", answers=test_answers_list)
-    assert test_question_model.size(id=200+size) == expected
+    assert test_question_model.size(id=200+size) == expected , f"error on #{size}"
